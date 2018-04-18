@@ -1,0 +1,9 @@
+
+/**
+ * 一个简单的socket服务器，能接受客户端请求，并将请求返回给客户端
+ * 每接受一个客户，都新建对应的EchoThread作为反应。
+ */
+
+public class EchoServerThread {
+
+}

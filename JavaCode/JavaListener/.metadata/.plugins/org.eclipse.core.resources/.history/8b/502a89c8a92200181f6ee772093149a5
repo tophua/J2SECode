@@ -1,0 +1,17 @@
+package ListenWin;
+
+public class Demo1 {
+
+	 /**
+     *java的事件监听机制
+     *1、事件监听涉及到三个组件：事件源、事件对象、事件监听器
+     *2、当事件源上发生某一个动作时，它会调用事件监听器的一个方法，并在调用该方法时把事件对象传递进去，
+     *    开发人员在监听器中通过事件对象，就可以拿到事件源，从而对事件源进行操作。
+     */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

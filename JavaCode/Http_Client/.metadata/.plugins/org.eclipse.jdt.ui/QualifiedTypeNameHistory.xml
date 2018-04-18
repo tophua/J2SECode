@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.net.URLConnection"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.conn.PoolingHttpClientConnectionManager"/>
+<fullyQualifiedTypeName name="org.apache.http.conn.ssl.SSLContextBuilder"/>
+<fullyQualifiedTypeName name="org.apache.http.conn.ssl.TrustSelfSignedStrategy"/>
+<fullyQualifiedTypeName name="org.apache.http.conn.ssl.SSLConnectionSocketFactory"/>
+<fullyQualifiedTypeName name="org.apache.http.config.Registry"/>
+<fullyQualifiedTypeName name="org.apache.http.conn.socket.ConnectionSocketFactory"/>
+<fullyQualifiedTypeName name="org.apache.http.config.RegistryBuilder"/>
+<fullyQualifiedTypeName name="org.apache.http.conn.socket.PlainConnectionSocketFactory"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.client.CloseableHttpClient"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.client.HttpClients"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.client.DefaultHttpRequestRetryHandler"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.HttpPost"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.CloseableHttpResponse"/>
+<fullyQualifiedTypeName name="org.apache.http.HttpEntity"/>
+<fullyQualifiedTypeName name="org.apache.http.HttpStatus"/>
+<fullyQualifiedTypeName name="org.apache.http.util.EntityUtils"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.apache.http.client.methods.HttpGet"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.mime.MultipartEntityBuilder"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.mime.content.StringBody"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.ContentType"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.mime.content.FileBody"/>
+<fullyQualifiedTypeName name="org.apache.http.entity.StringEntity"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="org.apache.http.ssl.SSLContextBuilder"/>
+<fullyQualifiedTypeName name="org.apache.http.impl.nio.client.CloseableHttpAsyncClient"/>
+<fullyQualifiedTypeName name="java.security.UnrecoverableKeyException"/>
+<fullyQualifiedTypeName name="java.security.KeyManagementException"/>
+<fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
+<fullyQualifiedTypeName name="java.security.KeyStoreException"/>
+<fullyQualifiedTypeName name="org.apache.http.auth.MalformedChallengeException"/>
+<fullyQualifiedTypeName name="org.apache.http.nio.reactor.IOReactorException"/>
+<fullyQualifiedTypeName name="org.apache.http.client.config.RequestConfig"/>
+<fullyQualifiedTypeName name="java.nio.charset.CodingErrorAction"/>
+</qualifiedTypeNameHistroy>

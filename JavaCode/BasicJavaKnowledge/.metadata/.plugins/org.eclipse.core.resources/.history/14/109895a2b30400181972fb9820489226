@@ -1,0 +1,17 @@
+package DatePackage;
+
+import java.util.Date;
+
+public class DateClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Date date1=new Date();
+      System.out.println(date1);
+      
+	  Date date2=new Date(2018-1900,12-3,23);
+	  System.out.println(date2);
+      
+	}
+
+}

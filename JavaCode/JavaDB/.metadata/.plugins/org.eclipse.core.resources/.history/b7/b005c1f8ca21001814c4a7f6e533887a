@@ -1,0 +1,18 @@
+package Mysql;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class mysqlOperator {
+
+	public static String DriverName="com.mysql.jdbc.Driver";
+	public static String UrlValue="jdbc:mysql://localhost:3307/my_test";
+	public static String UserValue="root";
+	public static String PWDValue="root";
+	
+	public static Statement statement=null;
+	public static Connection con=null;
+	
+	
+	
+}

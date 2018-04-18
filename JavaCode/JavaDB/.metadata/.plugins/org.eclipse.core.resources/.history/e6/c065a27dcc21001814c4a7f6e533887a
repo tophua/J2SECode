@@ -1,0 +1,137 @@
+package Mysql;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class mysqlOperator {
+
+	public static String DriverName="com.mysql.jdbc.Driver";
+	public static String UrlValue="jdbc:mysql://localhost:3307/my_test";
+	public static String UserValue="root";
+	public static String PWDValue="root";
+	
+	public static Statement statement=null;
+	public static Connection con=null;
+	
+	public static void InitConnect() throws IOException{
+		//连接数据库
+		//声明Connection对象
+		//Connection con;
+		//驱动程序名
+		String driver = DriverName;
+		//URL指向要访问的数据库名mydata
+		String url = UrlValue;
+		//MySQL配置时的用户名
+		String user = UserValue;
+		//MySQL配置时的密码
+		String password = PWDValue;
+		//遍历查询结果集
+		try {
+		   //加载驱动程序
+		   Class.forName(driver);
+		   //1.getConnection()方法，连接MySQL数据库！！
+		   con = DriverManager.getConnection(url,user,password);
+		   if(!con.isClosed())
+		       System.out.println("Succeeded connecting to the Database!");
+		  //2.创建statement类对象，用来执行SQL语句！！
+		   statement = con.createStatement();
+		   
+		}catch(ClassNotFoundException e) {   
+		   //数据库驱动类异常处理
+		    System.out.println("Sorry,can`t find the Driver!");   
+		    e.printStackTrace();   
+		 } catch(SQLException e) {
+		  //数据库连接失败异常处理
+		    e.printStackTrace();  
+		 }catch (Exception e) {
+		   // TODO: handle exception
+		    e.printStackTrace();
+		 }finally{
+		    System.out.println("数据库数据成功获取！！");
+        }	
+	}
+	
+	/*
+	 * 创建表
+	 * 		String strsql="CREATE TABLE `TestTable` ( "+
+//          "`ShelfId` int(11) DEFAULT NULL,"+
+//		  "`SlotId` int(11) DEFAULT NULL,"+
+//          "`Level` int(11) DEFAULT NULL,"+
+//		  "`LocalCardType` int(11) DEFAULT NULL,"+
+//          "`RemoteCardType` int(11) DEFAULT NULL,"+
+//		  "`CardSituation` varchar(255) CHARACTER SET gbk DEFAULT NULL,"+
+//          "`OnlineState` int(11) DEFAULT NULL,"+
+//		  "`UpdateTime` varchar(255) CHARACTER SET gbk DEFAULT NULL"+
+//          ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+	 */
+    public static void CreateTable(String strsql){
+    	int nResult=0;
+    	try{
+      	  //要执行的SQL语句 		   
+   		  nResult = statement.executeUpdate(strsql);		   
+     	    }catch (Exception e) {
+  		   // TODO: handle exception
+  		    e.printStackTrace();
+  		 }finally{
+  		    System.out.println("SQL语句:"+strsql+"执行成功!"+"Result:"+nResult);
+         }	   
+    }
+ 
+    /*
+     * 删除表
+     */
+    public static int DeleteTable(String strTable) throws IOException{
+    	int nResult=0;
+     	String sql="";
+    	try{
+    	  //要执行的SQL语句
+ 		   sql = "delete from "+strTable;
+ 		  nResult = statement.executeUpdate(sql);		   
+   	    }catch (Exception e) {
+		   // TODO: handle exception
+		    e.printStackTrace();
+		 }finally{
+		    System.out.println("SQL语句:"+sql+"执行成功!"+"Result:"+nResult);
+		    nResult=1;
+       }	   
+    	return nResult;
+    }
+    
+    /*
+     * 查询数据并取出
+     */
+    
+    public static ResultSet QueryInfoFromTable(String strquery){
+    	 ResultSet reSet=null;
+    	try{
+    		 reSet = statement.executeQuery(strquery);
+          //对ResultSet的遍历，例如如下
+    		 while(reSet.next()){
+    			 System.out.println("id=" + reSet.getObject("id"));
+    			 System.out.println("name=" + reSet.getObject("name"));
+    		} 
+    	}catch (Exception e) {
+		   // TODO: handle exception
+		    e.printStackTrace();
+		 }finally{
+		    System.out.println("SQL语句:"+strquery+"执行成功!");
+       }
+    	return reSet;
+    }
+    
+    public static void UnitConnect() throws IOException{
+    	try{
+    		 con.close();
+    	}catch (Exception e) {
+		   // TODO: handle exception
+		    e.printStackTrace();
+		 }finally{
+		    System.out.println("数据库释放成功！！");
+        }	    	  
+    }
+    
+}

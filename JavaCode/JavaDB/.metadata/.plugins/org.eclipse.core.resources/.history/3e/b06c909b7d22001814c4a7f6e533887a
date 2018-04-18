@@ -1,0 +1,12 @@
+package MyJDBC;
+
+/**
+* @ClassName: BeanListHandler
+* @Description: 将结果集转换成bean对象的list集合的处理器
+* @date: 2014-10-5 下午12:00:06
+*
+*/ 
+
+public class BeanListHandler implements ResultSetHandler{
+
+}

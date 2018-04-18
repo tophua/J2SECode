@@ -1,0 +1,8 @@
+package Test.LOB;
+
+/*
+ * JdbcOperaClob
+ */
+public class JdbcOperaClob {
+
+}

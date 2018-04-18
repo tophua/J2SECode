@@ -1,0 +1,120 @@
+public class SNMPv2Test {  
+21.    public static void main(String[] args) throws IOException, InterruptedException {  
+22.        Snmp snmp = new Snmp(new DefaultUdpTransportMapping());  
+23.        snmp.listen();  
+24.          
+25.        CommunityTarget target = new CommunityTarget();  
+26.        target.setCommunity(new OctetString("public"));  
+27.        target.setVersion(SnmpConstants.version2c);  
+28.        target.setAddress(new UdpAddress("192.168.0.100/161"));  
+29.        target.setTimeout(3000);    //3s  
+30.        target.setRetries(1);  
+31.                  
+32.        sendRequest(snmp, createGetPdu(), target);  
+33.        sendRequest(snmp, createGetNextPdu(), target);  
+34.        sendRequest(snmp, createGetBulkPdu(), target);  
+35.        snmpWalk(snmp, target);  
+36.          
+37.        target.setCommunity(new OctetString("private"));  
+38.        sendRequest(snmp, createSetPdu(), target);  
+39.          
+40.        CommunityTarget broadcastTarget = new CommunityTarget();  
+41.        broadcastTarget.setCommunity(new OctetString("public"));  
+42.        broadcastTarget.setVersion(SnmpConstants.version2c);  
+43.        broadcastTarget.setAddress(new UdpAddress("192.168.0.255/161"));  
+44.        broadcastTarget.setTimeout(5000);   //5s  
+45.        sendAsyncRequest(snmp, createGetNextPdu(), broadcastTarget);  
+46.        Thread.sleep(6000); //main thread wait 6s for the completion of asynchronous request   
+47.    }  
+48.      
+49.    private static PDU createGetPdu() {  
+50.        PDU pdu = new PDU();  
+51.        pdu.setType(PDU.GET);  
+52.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.3.0"))); //sysUpTime  
+53.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.5.0"))); //sysName  
+54.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.5")));   //expect an no_such_instance error  
+55.        return pdu;  
+56.    }  
+57.      
+58.    private static PDU createGetNextPdu() {  
+59.        PDU pdu = new PDU();  
+60.        pdu.setType(PDU.GETNEXT);  
+61.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.3")));   //sysUpTime  
+62.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.5")));   //sysName  
+63.  
+64.        return pdu;  
+65.    }  
+66.      
+67.    private static PDU createGetBulkPdu() {  
+68.        PDU pdu = new PDU();  
+69.        pdu.setType(PDU.GETBULK);  
+70.        pdu.setMaxRepetitions(10);  //must set it, default is 0  
+71.        pdu.setNonRepeaters(0);  
+72.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1")));     //system  
+73.        return pdu;  
+74.    }  
+75.      
+76.    private static PDU createSetPdu() {  
+77.        PDU pdu = new PDU();  
+78.        pdu.setType(PDU.SET);  
+79.        pdu.add(new VariableBinding(new OID("1.3.6.1.2.1.1.5.0"), new OctetString("sysname"))); //sysName  
+80.        return pdu;  
+81.    }  
+82.      
+83.    private static void sendRequest(Snmp snmp, PDU pdu, CommunityTarget target)  
+84.    throws IOException {  
+85.        ResponseEvent responseEvent = snmp.send(pdu, target);  
+86.        PDU response = responseEvent.getResponse();  
+87.          
+88.        if (response == null) {  
+89.            System.out.println("TimeOut...");  
+90.        } else {  
+91.            if (response.getErrorStatus() == PDU.noError) {  
+92.                Vector<? extends VariableBinding> vbs = response.getVariableBindings();  
+93.                for (VariableBinding vb : vbs) {  
+94.                    System.out.println(vb + " ," + vb.getVariable().getSyntaxString());  
+95.                }  
+96.            } else {  
+97.                System.out.println("Error:" + response.getErrorStatusText());  
+98.            }  
+99.        }  
+100.    }  
+101.      
+102.    private static void sendAsyncRequest(Snmp snmp, PDU pdu, CommunityTarget target)  
+103.    throws IOException {  
+104.        snmp.send(pdu, target, null, new ResponseListener(){  
+105.  
+106.            @Override  
+107.            public void onResponse(ResponseEvent event) {  
+108.                PDU response = event.getResponse();  
+109.                System.out.println("Got response from " + event.getPeerAddress());  
+110.                if (response == null) {  
+111.                    System.out.println("TimeOut...");  
+112.                } else {  
+113.                    if (response.getErrorStatus() == PDU.noError) {  
+114.                        Vector<? extends VariableBinding> vbs = response.getVariableBindings();  
+115.                        for (VariableBinding vb : vbs) {  
+116.                            System.out.println(vb + " ," + vb.getVariable().getSyntaxString());  
+117.                        }  
+118.                    } else {  
+119.                        System.out.println("Error:" + response.getErrorStatusText());  
+120.                    }  
+121.                }  
+122.            }});  
+123.    }  
+124.      
+125.    private static void snmpWalk(Snmp snmp, CommunityTarget target) {  
+126.        TableUtils utils = new TableUtils(snmp, new DefaultPDUFactory(PDU.GETBULK));//GETNEXT or GETBULK  
+127.        utils.setMaxNumRowsPerPDU(5);   //only for GETBULK, set max-repetitions, default is 10  
+128.        OID[] columnOids = new OID[] {  
+129.                new OID("1.3.6.1.2.1.1.9.1.2"), //sysORID  
+130.                new OID("1.3.6.1.2.1.1.9.1.3"), //sysORDescr  
+131.                new OID("1.3.6.1.2.1.1.9.1.5")  //wrong OID, expect an null in in VariableBinding array  
+132.        };  
+133.        // If not null, all returned rows have an index in a range (lowerBoundIndex, upperBoundIndex]  
+134.        List<TableEvent> l = utils.getTable(target, columnOids, new OID("3"), new OID("10"));  
+135.        for (TableEvent e : l) {  
+136.            System.out.println(e);  
+137.        }  
+138.    }  
+139.}  

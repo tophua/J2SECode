@@ -1,0 +1,13 @@
+package DBCP;
+
+
+/**
+* @ClassName: JdbcUtils_DBCP
+* @Description: 数据库连接工具类
+* @date: 2014-10-4 下午6:04:36
+*
+*/ 
+
+public class JdbcUtils_DBCP {
+
+}

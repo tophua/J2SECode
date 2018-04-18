@@ -1,0 +1,29 @@
+package DatePackage;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+      Date date1=new Date();
+      System.out.println(date1);
+      System.out.println("Year年:"+date1.getYear()+"  Month月:"+date1.getMonth()
+      +"  Date日:"+date1.getDate()+"  hour小时:"+date1.getHours()+"  minute分钟:"+
+    		  date1.getMinutes()+"  Second秒:"+date1.getSeconds()+"  day星期:"+date1.getDay());
+      
+      
+	  //long相对时间、Date对象、String对象转换
+	  Date date2=new Date(2018-1900,12-3,23);
+      long t=date2.getTime();
+      System.out.println("Date:"+date2+"--long:"+t);
+      
+      long mseconds=date2.getTime()/1000;
+      SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+      Date date3 = new Date(mseconds * 1000);  
+      String str = sdf.format(date3);  
+      System.out.println("long:"+mseconds+"--Date:"+date3+"--String:"+str);
+	}
+
+}

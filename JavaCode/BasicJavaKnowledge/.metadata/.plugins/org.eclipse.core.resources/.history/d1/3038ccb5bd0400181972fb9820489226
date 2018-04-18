@@ -1,0 +1,42 @@
+package DatePackage;
+
+import java.util.Calendar;
+
+public class CalendarClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Calendar ca1=Calendar.getInstance();
+       System.out.println("年:"+ca1.get(ca1.YEAR)+"  月:"+ca1.get(ca1.MONTH)+1
+                          +"   日:"+ca1.get(ca1.DAY_OF_MONTH)+"  时:"+ca1.get(ca1.HOUR_OF_DAY)
+                          +"   分钟:"+ca1.get(ca1.MINUTE)+"  秒:"+ca1.get(ca1.SECOND)
+                          +"  星期:"+ca1.get(ca1.DAY_OF_WEEK));  
+       //////结果是：年:2018  月:0   日:29  时:14   分钟:26  秒:17  星期:2
+       Calendar ca2=Calendar.getInstance();
+       ca2.set(2019, 7-2, 25);       
+       System.out.println("年:"+ca2.get(ca2.YEAR)+"  月:"+ca2.get(ca2.MONTH)
+                         +"   日:"+ca2.get(ca2.DAY_OF_MONTH)+"  时:"+ca2.get(ca2.HOUR_OF_DAY)
+                         +"   分钟:"+ca2.get(ca2.MINUTE)+"  秒:"+ca2.get(ca2.SECOND)
+                         +"  星期:"+ca2.get(ca2.DAY_OF_WEEK));  
+    
+       Calendar ca3=Calendar.getInstance();
+       ca3.set(Calendar.YEAR, 1990);    
+       ca3.set(Calendar.MONTH, 8);   
+       ca3.set(Calendar.DATE, 16);   //相同ca3.set(Calendar.DAY_OF_MONTH, 17);   
+       ca3.set(Calendar.HOUR, 11);   //12小时制的小时数
+       ca3.set(Calendar.HOUR_OF_DAY, 19);  //24小时制的小时数
+       ca3.set(Calendar.MINUTE, 52); 
+       ca3.set(Calendar.SECOND, 53);   
+       ca3.set(Calendar.DAY_OF_WEEK, 4);   
+       System.out.println("年:"+ca3.get(ca3.YEAR)+"  月:"+ca3.get(ca3.MONTH)
+                          +"   日:"+ca3.get(ca3.DATE)+"  时:"+ca3.get(ca3.HOUR_OF_DAY)
+                          +"   分钟:"+ca3.get(ca3.MINUTE)+"  秒:"+ca3.get(ca3.SECOND)
+                          +"  星期:"+ca3.get(ca3.DAY_OF_WEEK)); 
+       
+    ////add、after方法
+       
+       
+       
+	}
+
+}

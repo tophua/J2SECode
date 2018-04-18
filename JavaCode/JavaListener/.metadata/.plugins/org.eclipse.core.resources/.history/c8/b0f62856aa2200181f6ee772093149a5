@@ -1,0 +1,12 @@
+package BeListen;
+
+/**
+* @ClassName: Event(事件对象)
+* @Description:设计事件类，用来封装事件源
+* @date: 2014-9-9 下午9:37:56
+*
+*/ 
+
+public class Event {
+
+}

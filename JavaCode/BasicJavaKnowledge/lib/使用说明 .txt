@@ -1,0 +1,1 @@
+servlet-api.jar是在编写servlet必须用到的jar包，需要用到HttpServletRequest和HttpServletResponse等对象，这些对象都是要靠这个jar包才能使用的，有需要的赶快下载吧！

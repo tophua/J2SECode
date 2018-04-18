@@ -1,0 +1,7 @@
+package JdbcPool;
+
+import javax.sql.DataSource;
+
+public class JdbcPool implements DataSource{
+
+}

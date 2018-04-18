@@ -1,0 +1,3 @@
+URLConnection是http的JDK方式通信
+SynchroHttpClient是HttpClient同步方式
+AsyncHttpClient利用工厂模式将同步和异步HttpClient都实现了

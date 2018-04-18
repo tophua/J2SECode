@@ -1,0 +1,2 @@
+MyBatisTest\MyBatisProject工程有讲解Mybatis操作，基于XML和注解两种实现；
+还有别名等

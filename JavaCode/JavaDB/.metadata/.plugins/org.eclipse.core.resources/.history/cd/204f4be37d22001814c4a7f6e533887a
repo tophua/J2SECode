@@ -1,0 +1,14 @@
+package MyJDBC;
+
+import java.sql.ResultSet;
+
+/**
+* @ClassName: ResultSetHandler
+* @Description:结果集处理器接口
+* @date: 2014-10-5 下午12:01:27
+*
+*/ 
+
+public interface ResultSetHandler {
+	  public Object handler(ResultSet rs);
+}

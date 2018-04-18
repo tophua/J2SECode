@@ -1,0 +1,23 @@
+package DatePackage;
+
+import java.util.Calendar;
+
+public class CalendarClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Calendar ca1=Calendar.getInstance();
+       Calendar ca2=Calendar.getInstance();
+       ca2.set(2019, 7-2, 25);       
+  //     System.out.println("ca1:"+ca1+"  ca2:"+ca2);     
+       Calendar ca3=Calendar.getInstance();
+       ca3.set(Calendar.YEAR, 1990);    
+       ca3.set(Calendar.MONTH, 8);   
+       ca3.set(Calendar.DATE, 16);   //相同ca3.set(Calendar.DAY_OF_MONTH, 17);   
+       ca3.set(Calendar.HOUR, 11);   //12小时制的小时数
+       ca3.set(Calendar.HOUR_OF_DAY, 11);  //24小时制的小时数
+       ca3.set(Calendar.YEAR, 1990);   
+       
+	}
+
+}

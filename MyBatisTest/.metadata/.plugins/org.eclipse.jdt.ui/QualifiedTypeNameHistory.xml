@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Insert"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Delete"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Update"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
+<fullyQualifiedTypeName name="me.gacl.mapping.UserMapperI"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="me.gacl.util.MyBatisUtil"/>
+<fullyQualifiedTypeName name="me.gacl.domain.User"/>
+</qualifiedTypeNameHistroy>

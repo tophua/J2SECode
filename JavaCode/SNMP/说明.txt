@@ -1,0 +1,8 @@
+SNMPSummarize_Copy是对接振兴光端机的代码，这里涉及到操作数据库、解析Json、list、map等操作
+Snmp4j_AllTest包括SNMP的get、trap、set等功能的例子  
+   这里又有AllVersionPackage包，该包重新撰写了Get和Trap功能。
+   其中Trap有说明接收和处理数据线程分开的功能。
+
+SNMP4j_trapRecv是模拟trap接收的例子
+Snmp4jSimulate_ZX是自己模拟对接ZX设备的例子
+Snmp4jTrap_TestSend是模拟测试Trap发送的功能

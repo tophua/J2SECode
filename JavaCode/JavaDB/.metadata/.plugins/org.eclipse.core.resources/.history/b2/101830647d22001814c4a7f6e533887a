@@ -1,0 +1,5 @@
+package MyJDBC;
+
+public class BeanHandler implements ResultSetHandler{
+
+}

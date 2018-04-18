@@ -1,0 +1,12 @@
+package BeListen;
+
+/**
+* @ClassName: PersonListener(事件监听器)
+* @Description: 设计Person类(事件源)的监听器接口
+* @date: 2014-9-9 下午9:28:06
+*
+*/ 
+
+public interface PersonListener {
+
+}

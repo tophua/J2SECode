@@ -1,0 +1,25 @@
+
+public class TestClient {
+
+	  public static  byte generateByte(String s) {
+
+	        byte tmp = 0;
+	        char[] arr = s.toCharArray();
+	        if(arr.length > 2){
+	            return tmp;
+	        }
+	        int t0 = Integer.parseInt(Character.toString(arr[0]), 16);
+	        int t1 = Integer.parseInt(Character.toString(arr[1]), 16);
+	        byte tmp0 = (byte)t0;
+	        byte tmp1 = (byte)t1;
+	        tmp = (byte) (tmp0 << 4);
+	        tmp = (byte) (tmp | tmp1);
+	        return tmp;
+	    }
+	  
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

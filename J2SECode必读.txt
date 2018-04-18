@@ -1,0 +1,4 @@
+1. MybatisTest的代码也可以用J2SE运行。
+2. MavenTest是简单搭建的例子。
+3. JavaCode是学习相关的例子。
+    20180331--主要是增加“JavaCode\DesignPattern\Observer”的代码。

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.snmp4j.transport.DefaultUdpTransportMapping"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.USM"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.SecurityProtocols"/>
+<fullyQualifiedTypeName name="org.snmp4j.mp.MPv3"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.SecurityModels"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.UsmUser"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.AuthMD5"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.PrivDES"/>
+<fullyQualifiedTypeName name="org.snmp4j.smi.OctetString"/>
+<fullyQualifiedTypeName name="org.snmp4j.Target"/>
+<fullyQualifiedTypeName name="org.snmp4j.UserTarget"/>
+<fullyQualifiedTypeName name="org.snmp4j.smi.UdpAddress"/>
+<fullyQualifiedTypeName name="org.snmp4j.mp.SnmpConstants"/>
+<fullyQualifiedTypeName name="org.snmp4j.security.SecurityLevel"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.snmp4j.CommandResponderEvent"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,97 @@
+CREATE TABLE `ChassisInfo` (
+  `RecId` char(32) NOT NULL,
+  `LastModDateTime` datetime DEFAULT NULL,
+  `LastModBy` varchar(30) DEFAULT NULL,
+  `CreatedDateTime` datetime DEFAULT NULL,
+  `CreatedBy` varchar(30) DEFAULT NULL,
+  `PId` int(11) DEFAULT NULL,
+  `ChassisId` int(11) DEFAULT NULL,
+  `Level` int(11) DEFAULT NULL,
+  `Civilcode` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Brand` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Community` varchar(255) CHARACTER SET gbk DEFAULT NULL, 
+  `ChassisIP` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `chassisMask` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `chassisGateway` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `ShelfNum` int(11) DEFAULT NULL,
+  `ShelfSituation` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `OnlineState` int(11) DEFAULT NULL,
+  `UpdateTime` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  PRIMARY KEY (`RecId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+
+CREATE TABLE `ShelfInfo` (
+ `RecId` char(32) NOT NULL,
+  `LastModDateTime` datetime DEFAULT NULL,
+  `LastModBy` varchar(30) DEFAULT NULL,
+  `CreatedDateTime` datetime DEFAULT NULL,
+  `CreatedBy` varchar(30) DEFAULT NULL,
+  `ChasId` int(11) DEFAULT NULL,
+  `ShelfId` int(11) DEFAULT NULL,
+  `Level` int(11) DEFAULT NULL,
+  `ShelfName` int(11) DEFAULT NULL,
+  `ShelfpsuA` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `ShelfpsuB` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `ShelfvolA` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `ShelfvolB` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Shelffan` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Shelftemperature` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `ShelfcoCardNum` int(11) DEFAULT NULL,
+  `ShelfrmtCardNum` int(11) DEFAULT NULL,
+  `OnlineState` int(11) DEFAULT NULL,
+  `SlotSituation` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `UpdateTime` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  PRIMARY KEY (`RecId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+
+CREATE TABLE `SlotInfo` (
+  `RecId` char(32) NOT NULL,
+  `LastModDateTime` datetime DEFAULT NULL,
+  `LastModBy` varchar(30) DEFAULT NULL,
+  `CreatedDateTime` datetime DEFAULT NULL,
+  `CreatedBy` varchar(30) DEFAULT NULL,
+  `ChasId` int(11) DEFAULT NULL,
+  `ShelfId` int(11) DEFAULT NULL,
+  `SlotId` int(11) DEFAULT NULL,
+  `Level` int(11) DEFAULT NULL,
+  `LocalCardType` int(11) DEFAULT NULL,
+  `RemoteCardType` int(11) DEFAULT NULL,
+  `CardSituation` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `OnlineState` int(11) DEFAULT NULL,
+  `UpdateTime` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  PRIMARY KEY (`RecId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+
+CREATE TABLE `CardInfo` (
+  `RecId` char(32) NOT NULL,
+  `LastModDateTime` datetime DEFAULT NULL,
+  `LastModBy` varchar(30) DEFAULT NULL,
+  `CreatedDateTime` datetime DEFAULT NULL,
+  `CreatedBy` varchar(30) DEFAULT NULL,
+  `ChasId` int(11) DEFAULT NULL,
+  `ShelfId` int(11) DEFAULT NULL,
+  `SlotId` int(11) DEFAULT NULL,
+  `CardId` int(11) DEFAULT NULL,
+  `Level` int(11) DEFAULT NULL,
+  `CardType` int(11) DEFAULT NULL,
+  `Fxlink` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `LFPState` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Txlink1` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `CurMode1` varchar(255) DEFAULT NULL,
+  `Mode1` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Txlink2` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `CurMode2` varchar(255) DEFAULT NULL,
+  `Mode2` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Txlink3` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `CurMode3` varchar(255) DEFAULT NULL,
+  `Mode3` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `Txlink4` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `CurMode4` varchar(255) DEFAULT NULL,
+  `Mode4` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  `OnlineState` int(11) DEFAULT NULL,
+  `UpdateTime` varchar(255) CHARACTER SET gbk DEFAULT NULL,
+  PRIMARY KEY (`RecId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk;
+

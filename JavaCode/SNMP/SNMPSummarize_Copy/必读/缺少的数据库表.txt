@@ -1,0 +1,14 @@
+CREATE TABLE `faultstatdaily` (
+  `RecId` varchar(32) NOT NULL,
+  `CreatedDateTime` datetime DEFAULT NULL,
+  `areaName` varchar(32) NOT NULL DEFAULT '' COMMENT '区域名称',
+  `faultNum` int(11) NOT NULL DEFAULT 0 COMMENT '故障数量',
+  `faultSubId` varchar(32) NOT NULL DEFAULT '' COMMENT '故障原因细类ID',
+  `faultSubName` varchar(32) NOT NULL DEFAULT '' COMMENT '故障原因细类',
+  `faultMainName` varchar(32) NOT NULL DEFAULT '' COMMENT '故障原因大类',
+  `deviceList` longtext NULL  COMMENT '故障设备编码集合，以逗号分隔',
+  `statDay` varchar(32) NOT NULL DEFAULT '' COMMENT '统计的时间点，以天为单位',
+  `statHour` int(11) NOT NULL DEFAULT 14 COMMENT '统计的时间点，以小时为单位',
+  `normalTotal` int(11) NULL COMMENT '考核摄像机总数',
+  PRIMARY KEY (`RecId`)
+) ENGINE=MyISAM DEFAULT CHARSET=gbk; 

@@ -1,0 +1,12 @@
+package Test.LOB;
+
+/*
+ * 使用JDBC操作Mysql的大文本
+ */
+public class JdbcOperaClob {
+
+	
+	
+	
+	
+}

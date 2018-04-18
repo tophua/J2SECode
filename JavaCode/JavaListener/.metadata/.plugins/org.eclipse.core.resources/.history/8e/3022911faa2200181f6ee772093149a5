@@ -1,0 +1,13 @@
+package BeListen;
+
+/**
+* @ClassName: Person(事件源)
+* @Description: 设计一个Person类作为事件源，这个类的对象的行为(比如吃饭、跑步)可以被其他的对象监听
+* @author: 孤傲苍狼
+* @date: 2014-9-9 下午9:26:06
+*
+*/  
+
+public class Person {
+
+}

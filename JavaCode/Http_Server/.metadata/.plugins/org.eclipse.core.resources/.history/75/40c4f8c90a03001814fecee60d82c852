@@ -1,0 +1,11 @@
+
+/*
+ * 利用Socket实现简单的http服务端,在一个我们预定的端口上进行监听
+ * 这里不需要Tomcat等容器，在浏览器上输入“http://localhost:8081/post.html”
+ * 相当于告诉服务器需要加载"post.html"文件，那么服务器在预定地方找到后将内容
+ * 传给浏览器
+ */
+
+public class MyHttpServer {
+
+}
