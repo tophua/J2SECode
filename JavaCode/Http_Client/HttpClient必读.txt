@@ -1,0 +1,4 @@
+URLConnection是http的JDK方式通信
+SynchroHttpClient是HttpClient同步方式
+AsyncHttpClient利用工厂模式将同步和异步HttpClient都实现了,思想是对的，但代码运行不了
+“\Http_Client\SimulationHttpToCMS”是模拟CMS对接，异步可用的代码

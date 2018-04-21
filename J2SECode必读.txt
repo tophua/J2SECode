@@ -1,4 +1,6 @@
 1. MybatisTest的代码也可以用J2SE运行。
 2. MavenTest是简单搭建的例子。
 3. JavaCode是学习相关的例子。
+    "J2SECode\JavaCode\BasicJavaKnowledge\TestJavaDate"是Java的Date类相关代码。
+    "J2SECode\JavaCode\Http_Client"这里有同步、异步等操作的代码，验证没问题。
     20180331--主要是增加“JavaCode\DesignPattern\Observer”的代码。

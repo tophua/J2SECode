@@ -28,6 +28,7 @@ public class DateClass {
    //long--Date
       long mseconds=date2.getTime()/1000;     
       Date date3 = new Date(mseconds * 1000);  
+      
    //Date--一般时间String
       SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
       String str = sdf.format(date3);  
@@ -55,14 +56,35 @@ public class DateClass {
 	  } catch (ParseException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-	 }
-      
+	 }   
       
       Date date = new Date();          
       SimpleDateFormat df = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");  
       String dateStr = df.format(date);  
       System.out.println(dateStr);  
       ///结果是：    2018年01月29日 17:07
+      
+      long l1=1524146323;
+      long l2=1524247123;
+      Date dl1 = new Date(l1 * 1000);  
+      String strl1 = sdf.format(dl1);  
+      Date dl2 = new Date(l2 * 1000);  
+      String strl2 = sdf.format(dl2);  
+      System.out.println(strl1);  
+      
+      String s1="2018-04-20 8:00:00";
+      String s2="2018-04-21 12:00:00";
+  	  try {
+	    Date ds1 = (Date) formatter.parse(s1);
+		Date ds2 = (Date) formatter.parse(s2);
+		long lt1=ds1.getTime();
+		long lt2=ds2.getTime();
+		 System.out.println(lt1+" "+lt2 );   
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
       
 	}
 

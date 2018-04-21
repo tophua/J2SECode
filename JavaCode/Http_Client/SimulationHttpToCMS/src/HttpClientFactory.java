@@ -1,8 +1,7 @@
 
 public class HttpClientFactory {
+	//“Ï≤Ωhttp
 	private static HttpAsyncClient httpAsyncClient = new HttpAsyncClient();
-
-	private static HttpSyncClient httpSyncClient = new HttpSyncClient();
 
 	private HttpClientFactory() {
 	}
@@ -18,7 +17,4 @@ public class HttpClientFactory {
 		return httpAsyncClient;
 	}
 
-	public HttpSyncClient getHttpSyncClientPool() {
-		return httpSyncClient;
-	}
 }

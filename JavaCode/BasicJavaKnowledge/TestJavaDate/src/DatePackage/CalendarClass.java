@@ -1,6 +1,7 @@
 package DatePackage;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class CalendarClass {
 
@@ -59,6 +60,14 @@ public class CalendarClass {
       Calendar c8 = Calendar.getInstance();
       c8.setTimeInMillis(t1+1);
       System.out.println("c8: "+c8); 
+      //c8: java.util.GregorianCalendar[time=1524208986384,areFieldsSet=true,
+      //areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo
+      //[id="Asia/Shanghai",offset=28800000,dstSavings=0,useDaylight=false,
+      //transitions=19,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,
+      //ERA=1,YEAR=2018,MONTH=3,WEEK_OF_YEAR=16,WEEK_OF_MONTH=3,DAY_OF_MONTH=20,
+      //DAY_OF_YEAR=110,DAY_OF_WEEK=6,DAY_OF_WEEK_IN_MONTH=3,AM_PM=1,HOUR=3,
+      //HOUR_OF_DAY=15,MINUTE=23,SECOND=6,MILLISECOND=384,ZONE_OFFSET=28800000,DST_OFFSET=0]
+
       //计算相差天数
       Calendar c9 = Calendar.getInstance();
       c9.set(2016, 8-2, 20);
@@ -69,7 +78,14 @@ public class CalendarClass {
       long day1=(t3-t2)/(24*60*60*1000);
       System.out.println("t2: "+t2+" t3:"+t3+" day1:"+day1); 
         ////结果是：t2: 1469003673214 t3:1471854873214 day1:33     
-     
+    
+  ///Date和Calendar相互转换
+      Date date1=new Date();
+      date1.setSeconds(0);
+      Calendar cal1 = Calendar.getInstance();
+      cal1.setTime(date1);
+      
+      
 	}
 
 }
