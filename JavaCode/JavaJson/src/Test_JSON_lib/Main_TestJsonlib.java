@@ -7,7 +7,7 @@ public class Main_TestJsonlib {
 		TestJsonlib test1=new TestJsonlib();
 		test1.ClassConvertJsonString();
 		test1.MapConvertJsonString();
-		
+		test1.parseJSONObject1();
 	}
 
 }
