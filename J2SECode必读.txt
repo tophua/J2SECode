@@ -5,8 +5,14 @@
     "J2SECode\JavaCode\Http_Client"这里有同步、异步等操作的代码，验证没问题。
 4. 20180331--主要是增加“JavaCode\DesignPattern\Observer”的代码。
     
-5. 20180425---主要是增加了“J2SECode\JavaCode\Http_Client\SimulationHttpToCMS”。这是模拟对                 接2200“录像查询”的例子，涉及到异步http、Json、操作数据库等【增加具体的              HttpClient调用的方式,AsyncHttpClientPackage包中是完整的异步HttpClient代码。】。
+5. 20180425---主要是增加了“J2SECode\JavaCode\Http_Client\SimulationHttpToCMS”。这是模拟对
+                 接2200“录像查询”的例子，涉及到异步http、Json、操作数据库等【增加具体的 
+              HttpClient调用的方式,AsyncHttpClientPackage包中是完整的异步HttpClient代码。】。
               "\Http_Client\AsyncAndSynHttpClient"中对“HttpAsyncClient.java”进行了修改。
 
 6. 20180426---主要是总结了Json-lib解析，增加对null、[]等如何解析操作。
-  
+
+7. 20180430---整理了线程池代码“ThreadPool_SelfRealization”、“ThreadSync”、
+              “ThreadPool_ThreadPoolExecutor”等
+8. 20180501---整理了多线程并发“J2SECode\JavaCode\ConcurrencyModel”和单例模式
+              “J2SECode\JavaCode\DesignPattern”。

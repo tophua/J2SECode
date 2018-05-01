@@ -11,7 +11,7 @@ public class Main {
 		
 		try{		
 			//处理其他业务
-			//这个过程中，真是数据RealData组装完成，重复利用等待时间
+			//这个过程中，真实数据RealData组装完成，重复利用等待时间
 			Thread.sleep(2000);						
 		    }catch (Exception e){			
 		 }

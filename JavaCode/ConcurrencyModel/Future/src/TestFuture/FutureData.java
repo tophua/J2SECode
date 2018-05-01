@@ -3,21 +3,20 @@ package TestFuture;
 
 /**
  * 是对RealData的一个包装
- * @author limin
  *
  */
 public class FutureData implements Data{
 
-	protected RealData realData =null;
+	protected RealData realData = null;
 	protected boolean isReady = false;
+	//线程见将通过wait()和notifyAll()进行通信
 	public synchronized void setRealData(RealData realData){
 		if(isReady){
 			return;
 		}
 		this.realData=realData;
 		isReady=true;
-		notifyAll();
-		
+		notifyAll();	
 	}
 	@Override
 	public synchronized  String getResult() {
@@ -29,7 +28,5 @@ public class FutureData implements Data{
             }  
        }  
        return realData.result;  
-
 	}
-
 }
