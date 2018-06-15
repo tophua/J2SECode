@@ -13,10 +13,11 @@ import java.util.logging.Logger;
 public class EchoServerThread {
 
 	  // 服务端侦听的Socket
+  static int port = 9538;
   ServerSocket serverSkt = null;
 
   // 构造方法
-  public EchoServerThread(int port) {
+  private EchoServerThread() {
       System.out.println("服务器代理正在监听，端口：" + port);
       try {
           // 创建监听socket
@@ -38,4 +39,24 @@ public class EchoServerThread {
           }
       }
   }
+  
+  public static EchoServerThread getInstance(){
+	  return Singleton.INSIANCE.getInstance();
+  }
+  
+  private static enum Singleton{
+	  INSIANCE;
+	  
+	  private EchoServerThread singleton;
+	  //JVM确保此方法只调用一次
+	  private Singleton(){
+		  singleton = new EchoServerThread();
+	  }
+	  
+	  public EchoServerThread getInstance(){
+		  return singleton;
+	  }
+  }
+  
+  
 }
